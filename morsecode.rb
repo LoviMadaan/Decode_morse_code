@@ -29,3 +29,18 @@
 def decode_char(morse_code)
     @morse_code_to_character[morse_code]
 end
+
+
+def decode_word(words)
+    @words_array = words.split
+    @decoded_word = ''
+    @words_array.each do
+     |word|
+     @decoded_word += decode_char(word)
+    end
+     print "#{@decoded_word}"
+end
+
+
+
+decode_word("-- -.--")
