@@ -41,6 +41,15 @@ def decode_word(words)
      print "#{@decoded_word}"
 end
 
+# decode_word("-- -.--")
 
-
-decode_word("-- -.--")
+def decode(message)
+    @message_array = message.split("   ")
+    
+    @message_array.each do 
+        |messages|
+    @decoded_messages = decode_word(messages)
+    end
+    return @decoded_messages
+end
+puts decode("-- -.--   -. .- -- .") 
