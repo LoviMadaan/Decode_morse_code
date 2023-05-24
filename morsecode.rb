@@ -37,19 +37,20 @@ def decode_word(words)
   @words_array.each do |word|
     @decoded_word += decode_char(word)
   end
-  print "#{@decoded_word} "
+  @decoded_word.strip
 end
 
-# decode_word("-- -.--")
+# print decode_word("-- -.--")
 
 def decode(message)
   @message_array = message.split('   ')
+  @decoded_messages = ''
   @message_array.each do |messages|
-    @decoded_messages = decode_word(messages)
+    @decoded_messages += "#{decode_word(messages)} "
   end
-  @decoded_messages
+  @decoded_messages.strip
 end
 
 # decode("-- -.--   -. .- -- .")
 
-decode('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
+print decode('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
